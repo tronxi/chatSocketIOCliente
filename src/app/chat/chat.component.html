@@ -1,0 +1,8 @@
+<p>chat</p>
+<p>{{mensajes}}</p>
+<mat-form-field>
+  <input matInput [(ngModel)]="mensajeTexto" placeholder="mensaje" type="text">
+</mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="sendMessage()" class="boton">Enviar</button>
+
