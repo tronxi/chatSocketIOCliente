@@ -17,6 +17,14 @@ export class WebsocketServiceService {
     this.socket.emit('new-message', message);
   }
 
+  public unirse(sala): void {
+    this.socket.emit('union', sala);
+  }
+
+  public salir(sala): void {
+    this.socket.emit('salir', sala);
+  }
+
   public onMessage(): Observable<any> {
     return new Observable<any>(observer => {
       this.socket.on('message', (data) => observer.next(data));

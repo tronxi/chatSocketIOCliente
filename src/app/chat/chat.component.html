@@ -1,7 +1,19 @@
 <p>chat</p>
 <p>{{mensajes}}</p>
 <mat-form-field>
+  <input matInput [(ngModel)]="salaEnviar" placeholder="Sala" type="text">
+</mat-form-field>
+<mat-form-field>
   <input matInput [(ngModel)]="mensajeTexto" placeholder="Mensaje" type="text">
 </mat-form-field>
-<br>
 <button mat-raised-button color="primary" (click)="sendMessage()" class="boton">Enviar</button>
+<br>
+<mat-form-field>
+  <input matInput [(ngModel)]="salaUnirse" placeholder="Sala" type="text">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="unirse()" class="boton">Unirse</button>
+<br>
+<mat-form-field>
+  <input matInput [(ngModel)]="salaSalir" placeholder="Sala" type="text">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="salir()" class="boton">Salir</button>

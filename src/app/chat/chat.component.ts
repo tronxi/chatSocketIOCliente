@@ -11,6 +11,9 @@ export class ChatComponent implements OnInit {
   ioConnection: any;
   mensajeTexto: string;
   mensajes: string;
+  salaEnviar: string;
+  salaUnirse: string;
+  salaSalir: string;
   constructor(private wsc: WebsocketServiceService) { }
 
   ngOnInit() {
@@ -40,8 +43,18 @@ export class ChatComponent implements OnInit {
   }
 
   public sendMessage(): void {
-    this.wsc.send(this.mensajeTexto);
+    let json = JSON.stringify({sala: this.salaEnviar,
+                                    mensaje: this.mensajeTexto});
+    this.wsc.send(json);
     this.mensajeTexto = '';
+  }
+
+  public unirse(): void {
+    this.wsc.unirse(this.salaUnirse);
+  }
+
+  public salir(): void {
+    this.wsc.salir(this.salaSalir);
   }
 
 
