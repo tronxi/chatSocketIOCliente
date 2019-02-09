@@ -10,7 +10,7 @@ export class WebsocketServiceService {
   constructor() { }
 
   public initSocket(): void {
-    this.socket = io('localhost:5000');
+    this.socket = io('http://raspberrytronxi.ddns.net',  {path: '/chatSocketIOServer_socket'});
   }
 
   public send(message): void {
